@@ -19,7 +19,7 @@ pipeline {
     stage('SonarQube Analysis') {
       steps {
         withSonarQubeEnv('sonar') {
-          sh 'mvn -B sonar:sonar -Dsonar.projectKey=demo-app'
+            sh 'mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar -Dsonar.projectKey=demo-app'
         }
       }
     }
